@@ -6,5 +6,5 @@
 
 Úkol 1.4:
 
-Úkol 1.5: 
+Úkol 1.5: [pf.xml](https://github.com/MystiMiki/PIN/blob/main/cv1/pf.xml), [prf.xml](https://github.com/MystiMiki/PIN/blob/main/cv1/prf.xml)
 
