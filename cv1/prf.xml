@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <fakulta děkan="varady">
     <katedra zkratka_katedry="ki" webové_stránky="https://ki.ujep.cz">
         <vedoucí>
@@ -33,7 +34,7 @@
             </předmět>
         </předměty>
     </katedra>
-    <katedra zkratka="kch" webové_stránky="https://chemistry.ujep.cz/">
+    <katedra zkratka_katedry="kch" webové_stránky="https://chemistry.ujep.cz/">
         <vedoucí>
             <jméno>Jan Čermák</jméno>
             <telefon>+420 475 28 6811</telefon>
