@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<student gender="female">
+  <firstname>Anna</firstname>
+  <lastname>Smith</lastname>
+  <identifier>ST01152</identifier>
+  <email>anna.smith@google.com</email>
+  <year>2022</year> 
+  <branch faculty="PrF">Aplikovaná informatika</branch>
+</student>
