@@ -1,0 +1,55 @@
+<fakulta děkan="varady">
+    <katedra zkratka_katedry="ki" webové_stránky="https://ki.ujep.cz">
+        <vedoucí>
+            <jméno>Jiří Škvor</jméno>
+            <telefon>+420 123 456 789</telefon>
+        </vedoucí>
+        <zaměstnanci>
+            <zaměstnanec>
+                <jméno>Jaroslav Tichý</jméno>
+                <telefon>+420 475 286 730</telefon>
+                <telefon>+420 776 748 630</telefon>
+            </zaměstnanec>
+            <zaměstnanec>
+                <jméno>Kamil Balín</jméno>
+                <email>Kamil.Balin@ujep.cz</email>
+                <pozice>
+                    <lektor/>
+                </pozice>
+            </zaměstnanec>
+            <zaměstnanec>
+                <jméno>Květuše Sýkorová</jméno>
+                <email>Kvetuse.Sykorova@ujep.cz</email>
+                <telefon>+420 475 286 726</telefon>
+                <pozice>
+                    <odborný_asistent/>
+                </pozice>
+            </zaměstnanec>
+        </zaměstnanci>
+        <předměty>
+            <předmět zkratka="pin">
+                <název>Programování pro Internet</název>
+                <popis>Základy internetové technologie XML.</popis>
+            </předmět>
+        </předměty>
+    </katedra>
+    <katedra zkratka="kch" webové_stránky="https://chemistry.ujep.cz/">
+        <vedoucí>
+            <jméno>Jan Čermák</jméno>
+            <telefon>+420 475 28 6811</telefon>
+        </vedoucí>
+        <zaměstnanci>
+            <zaměstnanec>
+                <jméno>Jana Žďárová Karasová</jméno>
+                <email>zdarova.jana@gmail.com</email>
+                <pozice>
+                    <docent/>
+                </pozice>
+            </zaměstnanec>
+        </zaměstnanci>
+        <předměty>
+        </předměty>
+
+    </katedra>
+
+</fakulta>

@@ -1,0 +1,19 @@
+<fakulta děkan="škoda">
+    <katedra zkratka_katedry="kp" webové_stránky="https://www.pf.ujep.cz/cs/katedra-psychologie">
+        <vedoucí>
+            <jméno>Iva Wedkuchová</jméno>
+            <telefon>+420 475 282 284</telefon>            
+        </vedoucí>
+        <zaměstnanci>
+            <zaměstnanec>
+                <jméno>Vladislava Heřmanová</jméno>
+                <email>vladislava.hermanova@ujep.cz</email>
+                <pozice>
+                    <odborný_asistent/>                    
+                </pozice>
+            </zaměstnanec>
+        </zaměstnanci>
+        <předměty>
+        </předměty>
+    </katedra>
+</fakulta>
