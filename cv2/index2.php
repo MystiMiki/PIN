@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // XSD validace
         $xml = new DOMDocument;
         $xml->load($nahrana_fakulta);
-        if ($xml->schemaValidate('student2.xsd')){
+        if ($xml->schemaValidate('student.xsd')){
         
           echo '<p class="text-success">Nahraný soubor je validní a byl úspěšně nahrán do databáze.</p>';
           
