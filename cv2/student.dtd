@@ -1,9 +1,9 @@
 <!ELEMENT students (student+)>
 
 <!ELEMENT student (name, identifier, gender, 
-email+, start_year, branch*, disorder?)>
+email+, start_year, branch+, disorder?)>
 <!ATTLIST student
-study CDATA (bc|mgr) "bc">
+study (bc|mgr) "bc">
 
 <!ELEMENT name (first, middle*, last)>
 
@@ -13,13 +13,13 @@ study CDATA (bc|mgr) "bc">
 
 <!ELEMENT last (#PCDATA)>
 
-<!ELEMENT identifier (special|personal)+>
+<!ELEMENT identifier (special|personal)+> 
 
 <!ELEMENT special (#PCDATA)>
 
 <!ELEMENT personal (#PCDATA)>
 
-<!ELEMENT gender (female|male|non_binary|other)?>
+<!ELEMENT gender (female|male|non_binary|other)?> 
 
 <!ELEMENT female EMPTY>
 <!ELEMENT male EMPTY>
@@ -34,8 +34,9 @@ study CDATA (bc|mgr) "bc">
 <!ATTLIST branch
 faculty (FF|PF|PrF) #REQUIRED institute CDATA #REQUIRED>
 
-<!ELEMENT disorder (dyslexia|ADHD|Dyscalculia|Dysgraphia|other)+>
+<!ELEMENT disorder (dyslexia|ADHD|dyscalculia|dysgraphia)*> <!-- TODO-->
 
-
-
-
+<!ELEMENT dyslexia EMPTY>
+<!ELEMENT ADHD EMPTY>
+<!ELEMENT dyscalculia EMPTY>
+<!ELEMENT dysgraphia EMPTY>
