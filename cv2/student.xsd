@@ -7,14 +7,33 @@
 <xs:element name="last" type="xs:string"/>
 <xs:element name="special" type="xs:string"/>
 <xs:element name="personal" type="xs:string"/>
-<xs:element name="gender">
-    <xs:complexType />
-</xs:element>
 <xs:element name="email" type="xs:string"/>
-<xs:element name="start_year" type="xs:positiveInteger"/>
-<xs:element name="disorder">
+<xs:element name="female">
     <xs:complexType />
 </xs:element>
+<xs:element name="male">
+    <xs:complexType />
+</xs:element>
+<xs:element name="non_binary">
+    <xs:complexType />
+</xs:element>
+<xs:element name="other">
+    <xs:complexType />
+</xs:element>
+<xs:element name="start_year" type="xs:positiveInteger"/>
+<xs:element name="dyslexia"> 
+    <xs:complexType />
+</xs:element>
+<xs:element name="ADHD"> 
+    <xs:complexType />
+</xs:element>
+<xs:element name="dyscalculia"> 
+    <xs:complexType />
+</xs:element>
+<xs:element name="dysgraphia"> 
+    <xs:complexType />
+</xs:element>
+
 
 <!-- definition of simple types -->
 <xs:simpleType name="student_study">
@@ -23,7 +42,6 @@
         <xs:enumeration value="mgr"/>
     </xs:restriction>
 </xs:simpleType>
-
 <xs:simpleType name="branch_faculty">
     <xs:restriction base="xs:string">
         <xs:enumeration value="FF"/>
@@ -32,12 +50,13 @@
     </xs:restriction>
 </xs:simpleType>
 
+
 <!-- definition of attributes -->
-<xs:attribute name="study" type="xs:string" default="bc"/>
-<xs:attribute name="faculty" type="xs:string"/>
+<xs:attribute name="study" type="student_study" default="bc"/>
+<xs:attribute name="faculty" type="branch_faculty"/>
 <xs:attribute name="institute" type="xs:string"/>
 
-<!-- definition of complex types -->
+<!-- definition of complex elements -->
 <xs:element name="students">
     <xs:complexType>
         <xs:sequence>
@@ -47,26 +66,71 @@
 </xs:element>
 
 <xs:element name="student">
-  <xs:complexType>
-    <xs:sequence>
-      <xs:element ref="name"/>
-      <xs:element ref="identifier"/>
-      <xs:element ref="gender"/>
-      <xs:element ref="email" minOccurs="1" maxOccurs="unbounded"/>
-      <xs:element ref="start_year"/>
-      <xs:element ref="branch" minOccurs="1" maxOccurs="unbounded"/>
-      <xs:element ref="disorder" minOccurs="0" maxOccurs="1"/>
-    </xs:sequence>
-    <xs:attribute ref="study"/>
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="name"/>
+            <xs:element ref="identifier"/>
+            <xs:element ref="gender" minOccurs="0"  maxOccurs="1"/>
+            <xs:element ref="email" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element ref="start_year"/>
+            <xs:element ref="branch" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element ref="disorder" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute ref="study"/>
     </xs:complexType>
 </xs:element>
 
 <xs:element name="name">
-  <xs:complexType>
-    <xs:sequence>
-      <xs:element ref="first"/>
-      <xs:element ref="middle" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element ref="last" />
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="first"/>
+            <xs:element ref="middle" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="last"/>
+        </xs:sequence>
+    </xs:complexType>
 </xs:element>
+
+<xs:element name="identifier">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="special" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element ref="personal" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="gender">
+    <xs:complexType>
+        <xs:choice>
+            <xs:element ref="female"/>
+            <xs:element ref="male"/>
+            <xs:element ref="non_binary"/>
+            <xs:element ref="other"/>
+        </xs:choice>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="branch">
+    <xs:complexType>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute ref="faculty"/>
+                <xs:attribute ref="institute"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:element>
+
+<xs:element name="disorder">
+    <xs:complexType>
+        <xs:choice>
+            <xs:element ref="dyslexia"/>
+            <xs:element ref="ADHD"/>
+            <xs:element ref="dyscalculia"/>
+            <xs:element ref="dysgraphia"/>
+        </xs:choice>
+    </xs:complexType>
+</xs:element>
+
+
+</xs:schema>
