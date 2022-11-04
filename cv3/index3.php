@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Fakultonahrávač</title>
+    <title>Generátor .xml.html</title>
 </head>
 <body>
-    <h1>Fakultonahrávač</h1>
+    <h1>Generátor .xml.html</h1>
     <form enctype="multipart/form-data" action="index3.php" method="POST">
-        <label for="fakulta">Kliknutím nahrajte recept ve validním XML souboru.</label>
+        <label for="fakulta">Kliknutím nahrajte studenta ve validním XML souboru.</label>
         <br>
         <input type="file" name="fakulta" data-max-file-size="2M"/>
         <br>
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // XSL
             $xsl_dokument = new DOMDocument();
-            $xsl_dokument->load("student.xslt");
+            $xsl_dokument->load("student.xsl");
 
             // XSLTtransformation
             $xsl_procesor = new XSLTProcessor();
