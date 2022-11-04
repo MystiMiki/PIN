@@ -1,9 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<student gender="female">
-  <firstname>Anna</firstname>
-  <lastname>Smith</lastname>
-  <identifier>ST01152</identifier>
-  <email>anna.smith@google.com</email>
-  <year>2022</year> 
-  <branch faculty="PrF">Aplikovaná informatika</branch>
-</student>
+<students>
+  <student study="bc">
+    <name>
+      <first>Anna</first>
+      <last>Smith</last>
+    </name>  
+    <identifier>
+      <special>ST01152</special>
+      <personal>F20191</personal>
+    </identifier>
+    <gender>
+      <female/>
+    </gender>
+    <email>anna.smith@google.com</email>
+    <start_year>2020</start_year> 
+    <branch faculty="PrF" institute="KI">Programování a softwarové systémy</branch>
+    <disorder>
+      <dyslexia/>
+    </disorder>
+  </student>
+  <student study="bc">
+    <name>
+      <first>Mikey</first>
+      <last>Silouanos</last>
+    </name>  
+    <identifier>
+      <special>ST01155</special>
+      <personal>F20456</personal>
+    </identifier>
+    <gender>
+      <male/>
+    </gender>
+    <email>mikey.silouanos@google.com</email>
+    <start_year>2020</start_year> 
+    <branch faculty="PrF" institute="KI">Hardware a počítačové sítě</branch>
+  </student>
+  <student study="bc">
+    <name>
+      <first>Gopal</first>
+      <last>Buz</last>
+    </name>  
+    <identifier>
+      <special>ST01157</special>
+      <personal>F20198</personal>
+    </identifier>
+    <gender>
+      <male/>
+    </gender>
+    <email>gopal.buz@google.com</email>
+    <start_year>2020</start_year> 
+    <branch faculty="PrF" institute="KI">Programování a softwarové systémy</branch>
+    <disorder>
+      <dyslexia/>
+      <dysgraphia/>
+    </disorder>
+  </student>
+  <student study="bc">
+    <name>
+      <first>Lia</first>
+      <last>Gréta</last>
+    </name>  
+    <identifier>
+      <special>ST01255</special>
+      <personal>F20156</personal>
+    </identifier>
+    <gender>
+      <female/>
+    </gender>
+    <email>lia.greta@google.com</email>
+    <start_year>2020</start_year> 
+    <branch faculty="PrF" institute="KI">Programování a softwarové systémy</branch>
+  </student>
+  <student study="bc">
+    <name>
+      <first>Honorata</first>
+      <last>Radha</last>
+    </name>  
+    <identifier>
+      <special>ST01455</special>
+      <personal>F20176</personal>
+    </identifier>
+    <gender>
+      <female/>
+    </gender>
+    <email>honorata.radha@google.com</email>
+    <start_year>2020</start_year> 
+    <branch faculty="PrF" institute="KI">Hardware a počítačové sítě</branch>
+  </student>
+</students>
