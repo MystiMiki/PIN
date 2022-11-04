@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Fakultonahrávač</title>
+    <title>Studentonahrávač</title>
 </head>
 <body>
-    <h1>Fakultonahrávač</h1>
+    <h1>Studentonahrávač</h1>
     <form enctype="multipart/form-data" action="index.php" method="POST">
-        <label for="fakulta">Kliknutím nahrajte recept ve validním XML souboru.</label>
+        <label for="fakulta">Kliknutím nahrajte studenta ve validním XML souboru.</label>
         <br>
         <input type="file" name="fakulta" data-max-file-size="2M"/>
         <br>
