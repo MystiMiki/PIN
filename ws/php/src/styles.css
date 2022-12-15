@@ -1,0 +1,76 @@
+h1 {
+    background-color: #242526;
+    margin: 0;
+}
+
+header {
+    padding-top: 2%;
+    padding-left: 3%;
+    background-color: #242526;
+}
+
+body{
+    background-color: #181818;
+    color: #FFF;
+}
+
+nav {
+    background-color: #242526;
+    padding-left: 3%;
+}
+
+main {
+    width: 60%;
+    margin: auto;
+}
+
+button {
+    background-color: #242526!important;
+    border-radius: 5px;    
+}
+
+input[type=file]::file-selector-button{
+    background-color: #242526;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 8px 16px;
+    border: none;
+    margin-bottom: 5px;
+}
+
+input[type=file]::file-selector-button:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+input[type=submit]{
+    background-color: #242526;
+    color: #FFF;
+    border-radius: 5px;
+    padding: 8px 16px;
+    border: none;
+    margin-bottom: 5px;
+}
+
+input[type=submit]:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 5em;
+    width: 100%;
+    text-align: center;
+    background-color: #121212;
+}
+
+.w3-sofia {
+    font-family: Sofia, cursive;
+    color: #FFF;
+}
+
+.error {
+    color: #FF0000;
+}
