@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<student study="bc">
+    <name>
+        <first>Honorata</first>
+        <last>Radha</last>
+    </name>  
+    <identifier>
+        <personal>F20176</personal>
+    </identifier>
+    <gender>
+        <female/>
+    </gender>
+    <email>honorata.radha@google.com</email>
+    <start_year>2020</start_year> 
+    <branch faculty="PrF" institute="KI">Hardware and computer networks</branch>
+</student>

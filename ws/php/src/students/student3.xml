@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<student study="bc">
+    <name>
+        <first>Gopal</first>
+        <last>Buz</last>
+    </name>  
+    <identifier>
+        <personal>F20198</personal>
+    </identifier>
+    <gender>
+        <male/>
+    </gender>
+    <email>gopal.buz@google.com</email>
+    <start_year>2020</start_year> 
+    <branch faculty="PrF" institute="KI">Programming and software systems</branch>
+</student>
