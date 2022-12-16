@@ -1,9 +1,13 @@
+<?php
+    $cookie = ' ';
+    setcookie('xpath', $cookie, time() + (86400 * 30), "/");
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"/>
+    <link rel="stylesheet" href="styles.css"/>
     <title>Project PIN</title>
 </head>
 <body>
@@ -22,19 +26,42 @@
 
     <main>
         <section class="w3-container">
+            <form method="post" class="w3-cell w3-container">
+                <input type="text" name="xpath" required="true" placeholder="XPath query"/>
+                <button type="submit" class="w3-button">Send</button>
+            </form>
+            <div class="w3-cell w3-container valign_middle">Example query: /student/gender/female</div>
+        </section>
+
+        <section class="w3-container">
             <ul>
-                <?php              
-                $students = glob("students/*xml");
-                if (is_array($students)) {
+                <?php   
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    
+                    $xpath = $_POST["xpath"]; 
+
+                    $cookie = $_COOKIE['xpath'];
+                    $cookie = unserialize(' ',$cookie);
+                    echo var_dump($cookie);
+                    array_push($cookie,$xpath);
+                    $cookie = serialize($cookie);
+                    $_COOKIE['xpath'] = $cookie;
+                    echo var_dump($_COOKIE['xpath']);
+
+                    $students = glob("students/*xml");
                     foreach($students as $filename) {
                         $student = simplexml_load_file($filename);
-                        echo "<h5>" . preg_replace('/^students\//', '',$filename) . "</h5><br>";
-                        echo $student->name->first . " ";
-                        echo $student->name->last . "<br>";
-                        echo $student->email . "<br>";
-                        echo $student->branch . "<br>";
-                        echo "<hr>";
 
+                        $result = $student->xpath($xpath); 
+                                            
+                        if (count($result) > 0) {                            
+                            echo "<h5>" . preg_replace('/^students\//', '',$filename) . "</h5><br>";
+                            echo $student->name->first . " " . 
+                            $student->name->last . "<br>" .
+                            $student->email . "<br>" .
+                            $student->branch . "<br>" .
+                            "<hr>";
+                        }
                     }
                 }
                 ?>
@@ -43,7 +70,7 @@
     </main>
 
     <footer class="w3-container">
-        <h3>This is footer</h3>
+        <h3>Made by ME<sup>©</sup></h3>
     </footer>
 
 </body>

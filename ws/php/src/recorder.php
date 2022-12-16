@@ -2,8 +2,8 @@
 <html>
 <head>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"/>
+    <link rel="stylesheet" href="styles.css"/>
     <title>Project PIN</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
@@ -43,22 +43,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // XSD validace
         $xml = new DOMDocument;
         $xml->load($nahrany_student);
-        if ($xml->schemaValidate('student.xsd')){
+
         
-          echo '<hr><p class="text-success">The uploaded file is valid and has been successfully uploaded to the database.</p>';
+        if ($xml->schemaValidate('student.xsd')){
+
+            echo '<hr><p class="text-success">The uploaded file is valid and has been successfully uploaded to the database.</p>';
+
+            // XML
+            $xml_dokument = new DOMDocument();
+            $xml_dokument->load($nahrany_student);
+
+            $xslt_dokument = new DOMDocument();
+            $xslt_dokument->load("student.xslt");
+
+            // XSLTtransformation
+            $xslt_procesor = new XSLTProcessor();
+            $xslt_procesor->importStylesheet($xslt_dokument);
+            $transformovany_xml = $xslt_procesor->transformToDoc($xml_dokument);
+                
+            // ulozeni transformovaneho dokumentu
+            $nazev_dokumentu = basename($_FILES['student']['name']) . ".html";
+            $transformovany_xml->save("students/" . $nazev_dokumentu );
+        
           
         } else {
-          echo '<p class="text-warning">Uploaded file is not valid! Please check the correct structure.</p>';
-          unlink($nahrany_student);
+            echo '<p class="text-warning">Uploaded file is not valid! Please check the correct structure.</p>';
+            unlink($nahrany_student);
         }
     } else {
-         echo '<p>An error occurred while uploading the file!</p>';
+            echo '<p class="text-warning">An error occurred while uploading the file!</p>';
     }
 }
 ?>
     </main>
     <footer class="w3-container">
-        <h3>This is footer</h3>
+        <h3>Made by ME<sup>©</sup></h3>
     </footer>
 </body>
 </html>

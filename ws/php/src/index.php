@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
+
 <head>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"/>
+    <link rel="stylesheet" href="styles.css"/>
     <title>Project PIN</title>
 </head>
 <body>
@@ -21,29 +22,20 @@
     </nav>
 
     <main>
-        <section class="w3-container">
-            <ul>
-                <?php              
-                $students = glob("students/*xml");
-                if (is_array($students)) {
-                    foreach($students as $filename) {
-                        $student = simplexml_load_file($filename);
-                        echo '<h5 class="w3-panel w3-leftbar"><i>' . preg_replace('/^students\//', '',$filename) . '</i></h5>';
-                        echo $student->name->first . ' ';
-                        echo $student->name->last . '<br>';
-                        echo '<p class="w3-small">' . $student->email . '<br>';
-                        echo $student->branch . '<br>';
-                        echo '</p><hr>';
+        <ul class="w3-ul">
+            <?php              
+            $students = glob("students/*xml");
+            foreach($students as $filename) {
+                $student = simplexml_load_file($filename);
+                echo '<li><a href="'.$filename.'.html" class="w3-container"><i>' . preg_replace('/^students\//', '',$filename) . '</i></a></li>';
+            }
 
-                    }
-                }
-                ?>
-            </ul>
-        </section>
+            ?>
+        </ul>
     </main>
 
     <footer class="w3-container">
-        <h3>This is footer</h3>
+        <h3>Made by ME<sup>©</sup></h3>
     </footer>
 
 </body>

@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"/>
+    <link rel="stylesheet" href="styles.css"/>
     <title>Project PIN</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
@@ -83,41 +83,56 @@ function test_input($data) {
   <h2>PHP Form Validation Example</h2>
   <p><span class="error">* required field</span></p>
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+    <section class="w3-panel">
+    Name of file: <input type="text" name="file" placeholder="studentX.xml">
+    </section>
+
+    <section class="w3-panel">
     First name: <input type="text" name="first">
     <span class="error">* <?php echo $firstErr;?></span>
+    </section>
+
+    <section class="w3-panel">
     Last name: <input type="text" name="last">
     <span class="error">* <?php echo $lastErr;?></span>
-    <br><br>
-    E-mail: <input type="text" name="email">
+    </section>
+
+    <section class="w3-panel">
+    E-mail: <input type="text" name="email" placeholder="@">
     <span class="error">* <?php echo $emailErr;?></span>
-    <br><br>
-    Personal identifier: <input type="text" name="personal">
-    <span class="error">* <?php echo $personalErr;?></span>
-    <br><br>
-    <!--Comment: <textarea name="comment" rows="5" cols="40"></textarea>
-    <br><br>-->
+    </section>
+
+    <section class="w3-panel">
     Gender:
     <input type="radio" name="gender" value="female">Female
     <input type="radio" name="gender" value="male">Male
     <input type="radio" name="gender" value="other">Other
     <span class="error">* <?php echo $genderErr;?></span>
-    <br><br>
+    </section>
+
+    <section class="w3-panel">
+    Personal identifier: <input type="text" name="personal" placeholder="F...">
+    <span class="error">* <?php echo $personalErr;?></span>
+    </section>
+
+    <section class="w3-panel">
     <input type="submit" name="submit" value="Submit">  
+    </section>
   </form>
 
 <?php
-echo "<h2>Your Input:</h2>";
-echo $first;
-echo "<br>";
-echo $last;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $gender;
+echo "<h2>Your Input:</h2>" .
+      $first .
+      "<br>" .
+      $last .
+      "<br>" .
+      $email .
+      "<br>" .
+      $gender; 
 ?>
   </main>
   <footer class="w3-container">
-      <h3>This is footer</h3>
+      <h3>Made by ME<sup>©</sup></h3>
   </footer>
 
 </body>
