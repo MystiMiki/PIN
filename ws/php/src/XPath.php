@@ -20,7 +20,16 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
     </nav>
 
-    <main>
+    <nav class="right_bar w3-sidebar w3-bar-block">	
+        <p>History:</p>
+        <?php 
+        include 'function.php';
+        display_Xpath_history();
+        ?>
+    </nav>
+    
+
+    <main>  
         <section class="w3-container">
             <form method="post" class="w3-cell w3-container">
                 <input type="text" name="xpath" required="true" placeholder="XPath query"/>
@@ -39,6 +48,8 @@
                     $students = glob("students/*xml");
                     foreach($students as $filename) {
                         $student = simplexml_load_file($filename);
+
+                        Xpath_history();
 
                         $result = $student->xpath($xpath); 
                                             
