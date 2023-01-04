@@ -1,7 +1,3 @@
-<?php
-    $cookie = ' ';
-    setcookie('xpath', $cookie, time() + (86400 * 30), "/");
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,15 +34,7 @@
                 <?php   
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     
-                    $xpath = $_POST["xpath"]; 
-
-                    $cookie = $_COOKIE['xpath'];
-                    $cookie = unserialize(' ',$cookie);
-                    echo var_dump($cookie);
-                    array_push($cookie,$xpath);
-                    $cookie = serialize($cookie);
-                    $_COOKIE['xpath'] = $cookie;
-                    echo var_dump($_COOKIE['xpath']);
+                    $xpath = $_POST["xpath"];                   
 
                     $students = glob("students/*xml");
                     foreach($students as $filename) {
