@@ -26,7 +26,6 @@
             <?php              
             $students = glob("students/*xml");
             foreach($students as $filename) {
-                $student = simplexml_load_file($filename);
                 echo '<li><a href="'.$filename.'.html" class="w3-container"><i>' . preg_replace('/^students\//', '',$filename) . '</i></a></li>';
             }
 

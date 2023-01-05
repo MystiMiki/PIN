@@ -1,3 +1,8 @@
+<?php
+    include 'function.php';
+    $command = '';
+    Xpath_history($command);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,10 +25,8 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
     </nav>
 
-    <nav class="right_bar w3-sidebar w3-bar-block">	
-        <p>History:</p>
-        <?php 
-        include 'function.php';
+    <nav class="right_bar w3-sidebar w3-bar-block w3-padding-16">	
+        <?php         
         display_Xpath_history();
         ?>
     </nav>
@@ -47,10 +50,9 @@
 
                     $students = glob("students/*xml");
                     foreach($students as $filename) {
-                        $student = simplexml_load_file($filename);
+                        $student = simplexml_load_file($filename);                        
 
-                        Xpath_history();
-
+                        $command = $xpath;
                         $result = $student->xpath($xpath); 
                                             
                         if (count($result) > 0) {                            

@@ -22,6 +22,16 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
     </nav>
 
+    <nav class="right_bar w3-sidebar w3-bar-block w3-padding-16">	
+      <?php
+        $students = glob("students/*xml");
+        $students = preg_replace('/^students\//', '',$students);
+        foreach($students as $filename) {
+            echo '<li><i>' . $filename . '</i></li>';
+        }
+      ?>
+    </nav>
+
     <main class="w3-panel">   
 
 <?php
@@ -84,7 +94,7 @@ function test_input($data) {
   <p><span class="error">* required field</span></p>
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
     <section class="w3-panel">
-    Name of file: <input type="text" name="file" placeholder="studentX.xml">
+    Name of file: <input type="text" name="file" placeholder="studentX.xml"> 
     </section>
 
     <section class="w3-panel">
