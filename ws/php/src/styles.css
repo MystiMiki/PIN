@@ -19,18 +19,22 @@ nav {
 }
 
 .right_bar {
-    width:15%;
-    right:0;
+    min-width: 150px;
+    max-width: 300px;
+    min-height: 95px;
+    max-height: 600px;
     z-index: -1;
-    padding-left: 2%;
-    background-color: #fbfafa;
-    color: #181818;
+    padding: 10px 20px;
+    background-color: #3e3e3e;
+    color: #FFF;
 }
 
 main {
-    width: 60%;
+    width: 80%;
     margin: auto;
     margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .valign_middle {
