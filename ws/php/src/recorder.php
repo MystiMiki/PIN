@@ -9,12 +9,9 @@
 </head>
 <body>
     <header>
-        <h1 class="w3-sofia w3-container">Student recorder</h1>
-    </header>
-
-    <?php require 'components/top_nav.php'; ?>
-
-    
+        <h1 class="w3-sofia">Student recorder</h1>
+        <?php require 'components/top_nav.php'; ?> 
+    </header>    
 
     <main class="w3-panel">        
 
@@ -73,5 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
     <?php require 'components/right_bar.php'; ?>
     </main>
+
+    <?php require 'components/footer.php'; ?>
 </body>
 </html>

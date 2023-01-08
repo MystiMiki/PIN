@@ -1,4 +1,4 @@
-<div class="right_bar w3-round-large">	
+<div class="right_bar w3-round-large margin5">	
     <div class="w3-container"><b>Uploaded students:</b></div>
     <?php
     $students = glob("students/*xml");

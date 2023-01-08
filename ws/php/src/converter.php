@@ -9,10 +9,10 @@
 </head>
 <body>
     <header>
-        <h1 class="w3-sofia w3-container">Convert xml to html</h1>
+        <h1 class="w3-sofia">Convert xml to html</h1>
+        <?php require 'components/top_nav.php'; ?> 
     </header>
 
-    <?php require 'components/top_nav.php'; ?>
 
 
     <main class="w3-panel">

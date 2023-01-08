@@ -13,10 +13,9 @@
 </head>
 <body>
     <header>
-        <h1 class="w3-sofia w3-container">XPath</h1>
-    </header>  
-
-    <?php require 'components/top_nav.php'; ?>   
+        <h1 class="w3-sofia">XPath</h1>
+        <?php require 'components/top_nav.php'; ?> 
+    </header>    
 
     <main class="w3-panel"> 
         <section class="w3-container">
@@ -62,6 +61,7 @@
             ?>
         </div>
     </main>
-
+    
+    <?php require 'components/footer.php'; ?>
 </body>
 </html>

@@ -9,10 +9,11 @@
 </head>
 <body>
     <header>
-        <h1 class="w3-sofia w3-container">Students</h1>
+        <h1 class="w3-sofia">Students</h1>
+        <?php require 'components/top_nav.php'; ?>
     </header>
 
-    <?php require 'components/top_nav.php'; ?>
+    
 
     <main >
         <ul class="w3-ul ">
