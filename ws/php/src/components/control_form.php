@@ -1,5 +1,5 @@
 <?php
-// define variables and set to empty values
+    // define variables and set to empty values
     $file_nameErr = $firstErr = $lastErr =  $emailErr  =  
     $genderErr = $degreeErr = $personalErr = $start_yearErr = 
     $facultyErr = $instituteErr = "";
@@ -7,15 +7,17 @@
     $gender = $degree = $personal = $start_year = 
     $faculty = $institute = $branch = "";
 
-    $is_all = true;
-    $is_branch = false;
+    // control values
+    $is_all = true; // is all required values filled out
+    $is_branch = false; // if there is a branch, then faculty and institute are required
 
+    // control only on Submit button, not on Delete history button
     if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["submit"] == 'Submit') {
-        if (empty($_POST["file_name"])) {
+        if (empty($_POST["file_name"])) { // if value is empty
             $is_all = false;
-            $file_nameErr = "File name is required";
-        } else {
-            $file_name = test_input($_POST["file_name"]);
+            $file_nameErr = "File name is required"; // error message
+        } else {   
+            $file_name = test_input($_POST["file_name"]); // load value
         }
 
         if (empty($_POST["first"])) {
@@ -37,7 +39,7 @@
             $emailErr = "Email is required";
         } else {     
             $email = test_input($_POST["email"]);
-            if (!preg_match("/[a-z0-9._-]+@[a-z0-9_-]+\.[a-z0-9._-]+/i", $email)) {
+            if (!preg_match("/[a-z0-9._-]+@[a-z0-9_-]+\.[a-z0-9._-]+/i", $email)) { // control with regular expression
                 $is_all = false;
                 $emailErr = "Invalid email";
             }
@@ -64,17 +66,18 @@
             $personal = test_input($_POST["personal"]);
         }
 
-        if (!empty($_POST["start_year"])) {    
+        if (!empty($_POST["start_year"])) { // if value is NOT empty
             $start_year = test_input($_POST["start_year"]);
-            if ($start_year < 1900) {
+            if ($start_year < 1900) { // control year
                 $is_all = false;
                 $start_yearErr = "Year must be greater than 1900";
             }
         }
 
-        if (!empty($_POST["branch"])) {
+        if (!empty($_POST["branch"])) { 
             $branch = test_input($_POST["branch"]);
-            if (empty($_POST["faculty"])) {
+            // if there is a branch, then faculty and institute are required
+            if (empty($_POST["faculty"])) { 
                 $is_all = false;
                 $facultyErr = "Faculty is required";
             } else {
@@ -89,13 +92,15 @@
         }
     }
 
+    // edit input 
     function test_input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
+        $data = trim($data); // strip whitespace
+        $data = stripslashes($data); // Example: \' becomes '
+        $data = htmlspecialchars($data); // convert special characters to HTML entities
         return $data;
     }
 
+    // debug output
     function display_input($file_name, $first, $last, $email, $gender, $degree, $personal, $start_year, $branch, $faculty, $institute){
         echo "<h2>Your Input:</h2>" .
                   $file_name  .

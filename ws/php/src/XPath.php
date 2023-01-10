@@ -32,22 +32,25 @@
                     <?php   
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         
+                        // get xpath command from input
                         $xpath = $_POST["xpath"];                   
 
+                        // get file names of xml from folder UploadedStudents
                         $students = glob("UploadedStudents/*xml");
                         foreach($students as $filename) {
+                            // load xml
                             $student = simplexml_load_file($filename);                        
 
-                            $command = $xpath;
+                            // returned result of xpath command
                             $result = $student->xpath($xpath); 
                                                 
                             if (count($result) > 0) {                            
-                                echo "<h5>" . preg_replace('/^UploadedStudents\//', '',$filename) . "</h5><br>";
-                                echo $student->name->first . " " . 
-                                $student->name->last . "<br>" .
-                                $student->email . "<br>" .
-                                $student->branch . "<br>" .
-                                "<hr>";
+                                echo '<p class="w3-panel w3-leftbar w3-border-black">' . preg_replace('/^UploadedStudents\//', '',$filename) . '</p>'; // edit name file for end user with regular expression
+                                echo $student->name->first . '' . 
+                                $student->name->last . '<br>' .
+                                $student->email . '<br>' .
+                                $student->branch . '<br>' .
+                                '<hr>';
                             }
                         }
                     }
@@ -59,7 +62,7 @@
         <div class="right_bar w3-round-large">	
             <?php         
             display_Xpath_history_number();
-            //display_Xpath_history();
+            //display_Xpath_history(); //NOT WORKING PROPERLY
             ?>
         </div>
     </main>

@@ -17,8 +17,7 @@
         <?php require 'components/top_nav.php'; ?> 
     </header> 
     
-    <main>  
-      
+    <main>        
       <div>
         <?php require 'components/control_form.php'; ?>      
         <?php require 'components/OOP.php'; ?>
@@ -27,7 +26,10 @@
         <p><span class="error valign_middle">* required field</span></p>
         <?php require 'components/form_layout.php'; ?>  
 
-        <?php display_input($file_name, $first, $last, $email, $gender, $degree, $personal, $start_year, $branch, $faculty, $institute); ?>
+        <?php 
+        // Debug output
+        //display_input($file_name, $first, $last, $email, $gender, $degree, $personal, $start_year, $branch, $faculty, $institute); 
+        ?>
       </div>
       
       <section class="display_top">

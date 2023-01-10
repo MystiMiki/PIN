@@ -71,8 +71,8 @@ h1 {
     min-height: 23px;
 }
 
-.max_width{
-    max-width: 450px;
+.width450{
+    width: 450px;
 }
 
 .min_width{

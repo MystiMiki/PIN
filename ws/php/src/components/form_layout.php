@@ -1,7 +1,10 @@
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+
+        <!-- text input -->
         <section class="w3-panel w3-border w3-round-large">
-          <h4>Name of file:</h4>
-          <input type="text" name="file_name" placeholder="studentX.xml"> 
+          <h4>Name of file:</h4> <!-- name of value -->
+          <input type="text" name="file_name" placeholder="studentX.xml"> <!-- value input -->  
+          <!-- error message - required -->
           <span class="error">* 
             <?php echo '<div class="w3-container min_height">' . $file_nameErr . '</div>';?>
           </span>
@@ -31,9 +34,10 @@
           </span>
         </section>
 
+        <!-- radio button input -->
         <section class="w3-panel w3-border w3-round-large">
-          <h4>Degree:</h4>
-          
+          <h4>Degree:</h4>     
+          <!-- options -->
           <span class="margin2">
             <input type="radio" name="degree" value="bc" class="margin2">Bachelor
           </span>
@@ -46,8 +50,7 @@
         </section>
 
         <section class="w3-panel w3-border w3-round-large">
-          <h4>Gender:</h4>
-          
+          <h4>Gender:</h4>          
           <span class="margin2">
             <input type="radio" name="gender" value="female" class="margin2">Female
           </span>
@@ -103,6 +106,7 @@
           </p>        
         </section>
 
+        <!-- Buttons - Submit, Delete history -->
         <section class="w3-panel">
           <input type="submit" name="submit" value="Submit">  
           <input type="submit" name="submit" value="Delete history">  

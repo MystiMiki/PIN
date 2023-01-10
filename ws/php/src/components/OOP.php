@@ -11,9 +11,10 @@ abstract class human {
         $this->gender = $gender;
     }
 
-    abstract public function get_information();
+    abstract public function create_XML();
   }
 
+// Student is a descendant of Human
 class Student extends Human {
     private $file_name;
     private $email;
@@ -40,6 +41,7 @@ class Student extends Human {
         $this->institute = $institute;
     }
 
+    // getter
     function get_file_name() { return $this->file_name; }
     function get_first() { return $this->first_name; }
     function get_last() { return $this->last_name; }
@@ -52,11 +54,11 @@ class Student extends Human {
     function get_faculty() { return $this->faculty; }
     function get_institute() { return $this->institute; }
     
-
-    public function createXML(){
-        //https://www.guru99.com/php-and-xml.html#8
-
-        $dom = new DOMDocument();
+    // create student XML file, takes values from class Student
+    public function create_XML(){
+        // https://www.guru99.com/php-and-xml.html#8
+        // create main file and set standart values
+        $dom = new DOMDocument(); 
 
         $dom->encoding = 'utf-8';
 
@@ -64,17 +66,22 @@ class Student extends Human {
 
         $dom->formatOutput = true;
 
+        // name of file
         $xml_file_name = 'XMLstudents/'.$this->get_file_name();
 
-        //student
-
+        // student
+        // first it is need to be created and add all attributes and inner elements, then can be added to parent element
+        // we can go from up to down or from the most inner elements
+        // this is from up to down
+        // number in name of variable, tell us how deep it needs to go
+ 
         $root_student = $dom->createElement('student');
 
         $attr_study = new DOMAttr('study', $this->get_degree());
 
         $root_student->setAttributeNode($attr_study);
     
-        //name
+        // name
         $child1_name = $dom->createElement('name');
 
         $child2_first = $dom->createElement('first', $this->get_first());
@@ -85,7 +92,7 @@ class Student extends Human {
 
         $root_student->appendChild($child1_name);
 
-        //identifier
+        // identifier
         $child1_identifier = $dom->createElement('identifier');
 
         $child2_personal = $dom->createElement('personal', $this->get_personal_id());
@@ -93,7 +100,7 @@ class Student extends Human {
 
         $root_student->appendChild($child1_identifier);
 
-        //gender
+        // gender
         $child1_gender = $dom->createElement('gender');
 
         $child2_gender = $dom->createElement($this->get_gender());
@@ -101,19 +108,19 @@ class Student extends Human {
 
         $root_student->appendChild($child1_gender);
 
-        //email
+        // email
         $child1_email = $dom->createElement('email',$this->get_email());
 
         $root_student->appendChild($child1_email);
 
-        //start_year
+        // start_year
         $child1_start_year = $dom->createElement('start_year',$this->get_start_year());
 
         $root_student->appendChild($child1_start_year);
 
         //branch
         echo var_dump($this->get_branch());
-        if($this->get_branch() != ""){
+        if($this->get_branch() != ""){ // if branch is not empty than add attributes
             $child1_branch = $dom->createElement('branch',$this->get_branch());
             $attr_faculty = new DOMAttr('faculty', $this->get_faculty());
             $attr_institute = new DOMAttr('institute', $this->get_institute());
@@ -123,38 +130,39 @@ class Student extends Human {
             $root_student->appendChild($child1_branch);
         }
 
+        // as last needs to append whole finished student to main file
         $dom->appendChild($root_student);
 
+        // save file, file name can be with path
         $dom->save($xml_file_name);
-
-    }
-    public function get_information(){
 
     }
 }
 
+// if either of button is pressed
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    switch($_POST["submit"]){
-        case 'Submit':
-            if($is_all){
-                $arr = array($file_name); 
+    switch($_POST["submit"]){ 
+        case 'Submit': // if Submit button
+            if($is_all){ // if everything required is filled out 
+                $arr = array($file_name);  // create array with value file_name
 
                 $student = new Student($file_name, $first, $last, $email, $gender, $degree, $personal, $start_year, $branch, $faculty, $institute);
 
+                // SESSION
+                // if session is set, than goes through it and add values to our array
                 if (isset($_SESSION["file_name"])) {
                     foreach($_SESSION["file_name"] as $key=>$file) {
                         array_push($arr, $file);
                     }
                 }
+                // assign our array to session, overwrites existing value/array
                 $_SESSION["file_name"] = $arr;
 
-                
-
-                $student->createXML();                
+                $student->create_XML();                
             }            
             break;
-        case 'Delete history':
-            session_unset();
+        case 'Delete history': // if Delete history button
+            session_unset(); // delete values in session
             break;
     }
 }

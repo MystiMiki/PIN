@@ -11,10 +11,8 @@
     <header>
         <h1 class="w3-sofia">Students</h1>
         <?php require 'components/top_nav.php'; ?>
-    </header>
-
+    </header>   
     
-
     <main >
         <ul class="w3-ul">
             <?php              
