@@ -1,6 +1,5 @@
-h1 {
-    margin: 0px;
-    padding-top: 10px;
+html, body{
+    height: 100%;
 }
 
 header {
@@ -11,16 +10,43 @@ header {
     width: 100%;
 }
 
-
 body {
     background-color: #181818;
-    color: #FFF;
+    color: #FFF;    
 }
 
 nav {
     background-color: #242526;
     padding-left: 3%;
 }
+
+main {
+    width: 60%;
+    min-height: 82%;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;    
+    justify-content: space-evenly;
+    flex: 1 0 auto;
+}
+
+footer {
+    position: sticky;
+    height: 62px;
+    width: 100%;
+    text-align: center;
+    background-color: #121212;
+}
+
+form {
+    max-width: 405px;
+}
+
+h1 {
+    margin: 0px;
+    padding-top: 10px;
+}
+
 
 .right_bar {
     min-width: 150px;
@@ -33,26 +59,35 @@ nav {
     color: #FFF;
 }
 
-main {
-    width: 80%;
-    margin: auto;
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-around;
+.valign_middle{
+    vertical-align: middle;
 }
 
-.valign_middle {
-    vertical-align: middle;
+.halign_middle{
+    margin: auto;
 }
 
 .min_height{
     min-height: 23px;
 }
 
-.display-top{
+.max_width{
+    max-width: 450px;
+}
+
+.min_width{
+    min-width: 600px;
+}
+
+.display_top{
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+}
+
+.display_row{
+    display: flex;
+    flex-direction: row;
 }
 
 .margin5{
@@ -61,14 +96,6 @@ main {
 
 .margin2{
     margin: 2px;
-}
-
-.margin1{
-    margin: 1px;
-}
-
-form {
-    max-width: 405px;
 }
 
 button {
@@ -102,15 +129,6 @@ input[type=submit]{
 input[type=submit]:hover{
     background-color: #ccc;
     color: #000;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    height: 60px;
-    width: 100%;
-    text-align: center;
-    background-color: #121212;
 }
 
 .w3-sofia {

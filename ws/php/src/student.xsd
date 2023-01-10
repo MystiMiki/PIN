@@ -28,18 +28,11 @@
         <xs:enumeration value="mgr"/>
     </xs:restriction>
 </xs:simpleType>
-<xs:simpleType name="branch_faculty">
-    <xs:restriction base="xs:string">
-        <xs:enumeration value="FF"/>
-        <xs:enumeration value="PF"/>
-        <xs:enumeration value="PrF"/>
-    </xs:restriction>
-</xs:simpleType>
 
 
 <!-- definition of attributes -->
 <xs:attribute name="study" type="student_study" default="bc"/>
-<xs:attribute name="faculty" type="branch_faculty"/>
+<xs:attribute name="faculty" type="xs:string"/>
 <xs:attribute name="institute" type="xs:string"/>
 
 <!-- definition of complex elements -->
@@ -48,10 +41,10 @@
         <xs:sequence>
             <xs:element ref="name"/>
             <xs:element ref="identifier"/>
-            <xs:element ref="gender" minOccurs="0"  maxOccurs="1"/>
+            <xs:element ref="gender" maxOccurs="1"/>
             <xs:element ref="email" minOccurs="1" maxOccurs="unbounded"/>
             <xs:element ref="start_year" minOccurs="0"/>
-            <xs:element ref="branch" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element ref="branch" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attribute ref="study"/>
     </xs:complexType>

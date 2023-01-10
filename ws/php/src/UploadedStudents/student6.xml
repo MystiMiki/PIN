@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<student study="mgr">
+  <name>
+    <first>Tanja</first>
+    <last>Tirta</last>
+  </name>
+  <identifier>
+    <personal>F20152</personal>
+  </identifier>
+  <gender>
+    <female/>
+  </gender>
+  <email>tanjatirta@gmail.com</email>
+  <start_year>2021</start_year>
+  <branch faculty="Prf" institute="KI">Programming and software systems</branch>
+</student>

@@ -9,19 +9,19 @@
 </head>
   <body>
   <header>
-    <h1>Student</h1>
-  </header>  
+    <h1 class="w3-sofia">Convert xml to html</h1>
+    <nav class="w3-bar">
+      <a href="../index.php" class="w3-bar-item w3-button w3-round">Overview of students</a>
+      <a href="../recorder.php" class="w3-bar-item w3-button w3-round">Student recorder</a>
+      <a href="../converter.php" class="w3-bar-item w3-button w3-round">Convert xml to html</a>
+      <a href="../XPath.php" class="w3-bar-item w3-button w3-round">XPath</a>
+      <a href="../form.php" class="w3-bar-item w3-button w3-round">Form</a>
+    </nav>
+  </header>
   
-<nav class="w3-bar">
-  <a href="../index.php" class="w3-bar-item w3-button w3-round">Overview of students</a>
-  <a href="../recorder.php" class="w3-bar-item w3-button w3-round">Student recorder</a>
-  <a href="../converter.php" class="w3-bar-item w3-button w3-round">Convert xml to html</a>
-  <a href="../XPath.php" class="w3-bar-item w3-button w3-round">XPath</a>
-  <a href="../form.php" class="w3-bar-item w3-button w3-round">Form</a>
-</nav>
 
   <main class="w3-container">
-    <div class="w3-display-container">
+    <div class="w3-display-container min_width">
       <xsl:if test="student/gender/male = ''">
         <div class="white_text bg_tiffany_blue"> 
           <h3 style="font-weight:bold"><xsl:value-of select="student/name"/></h3>              
@@ -59,5 +59,8 @@
       </div>
     </div>
   </main>
+  <footer class="w3-container">
+    <h3>Made by ME<sup>©</sup></h3>
+  </footer>
 </body>
 </html>

@@ -17,41 +17,43 @@
         <?php require 'components/top_nav.php'; ?> 
     </header>    
 
-    <main class="w3-panel"> 
-        <section class="w3-container">
-            <form method="post" class="w3-cell w3-container">
-                <input type="text" name="xpath" required="true" placeholder="XPath query"/>
-                <button type="submit" class="w3-button">Send</button>
-            </form>
-            <div class="w3-cell w3-container valign_middle">Example query: /student/gender/female</div>
-        </section>
+    <main> 
+        <section>
+            <section class="w3-container">
+                <form method="post" class="w3-cell w3-container">
+                    <input type="text" name="xpath" required="true" placeholder="XPath query"/>
+                    <button type="submit" class="w3-button">Send</button>
+                </form>
+                <div class="w3-cell w3-container valign_middle">Example query: /student/gender/female</div>
+            </section>
 
-        <section class="w3-container">
-            <ul>
-                <?php   
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    
-                    $xpath = $_POST["xpath"];                   
+            <section class="w3-container">
+                <ul>
+                    <?php   
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        
+                        $xpath = $_POST["xpath"];                   
 
-                    $students = glob("students/*xml");
-                    foreach($students as $filename) {
-                        $student = simplexml_load_file($filename);                        
+                        $students = glob("UploadedStudents/*xml");
+                        foreach($students as $filename) {
+                            $student = simplexml_load_file($filename);                        
 
-                        $command = $xpath;
-                        $result = $student->xpath($xpath); 
-                                            
-                        if (count($result) > 0) {                            
-                            echo "<h5>" . preg_replace('/^students\//', '',$filename) . "</h5><br>";
-                            echo $student->name->first . " " . 
-                            $student->name->last . "<br>" .
-                            $student->email . "<br>" .
-                            $student->branch . "<br>" .
-                            "<hr>";
+                            $command = $xpath;
+                            $result = $student->xpath($xpath); 
+                                                
+                            if (count($result) > 0) {                            
+                                echo "<h5>" . preg_replace('/^UploadedStudents\//', '',$filename) . "</h5><br>";
+                                echo $student->name->first . " " . 
+                                $student->name->last . "<br>" .
+                                $student->email . "<br>" .
+                                $student->branch . "<br>" .
+                                "<hr>";
+                            }
                         }
                     }
-                }
-                ?>
-            </ul>
+                    ?>
+                </ul>
+            </section>
         </section>
 
         <div class="right_bar w3-round-large">	

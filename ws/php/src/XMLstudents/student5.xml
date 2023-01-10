@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<student study="bc">
+  <name>
+    <first>Peter</first>
+    <last>Down</last>
+  </name>
+  <identifier>
+    <personal>F20150</personal>
+  </identifier>
+  <gender>
+    <male/>
+  </gender>
+  <email>peter.down@gmail.com</email>
+  <start_year>2005</start_year>
+</student>

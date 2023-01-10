@@ -16,11 +16,11 @@
     
 
     <main >
-        <ul class="w3-ul ">
+        <ul class="w3-ul">
             <?php              
-            $students = glob("students/*xml");
+            $students = glob("UploadedStudents/*xml");
             foreach($students as $filename) {
-                echo '<li><a href="'.$filename.'.html" class="w3-container haling_middle"><i>' . preg_replace('/^students\//', '',$filename) . '</i></a></li>';
+                echo '<li><a href="'.$filename.'.html" class="w3-container haling_middle"><i>' . preg_replace('/^UploadedStudents\//', '',$filename) . '</i></a></li>';
             }
 
             ?>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<student study="bc">
+    <name>
+        <first>Mikey</first>
+        <last>Silouanos</last>
+    </name>  
+    <identifier>
+        <personal>F20456</personal>
+    </identifier>
+    <gender>
+        <male/>
+    </gender>
+    <email>mikey.silouanos@google.com</email>
+    <start_year>2020</start_year> 
+    <branch faculty="PrF" institute="KI">Hardware and computer networks</branch>
+</student>

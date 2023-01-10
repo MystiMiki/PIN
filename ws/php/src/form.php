@@ -17,36 +17,34 @@
         <?php require 'components/top_nav.php'; ?> 
     </header> 
     
-    <main class="w3-panel">  
+    <main>  
       
-    <div>
-      <?php require 'components/control_form.php'; ?>      
+      <div>
+        <?php require 'components/control_form.php'; ?>      
+        <?php require 'components/OOP.php'; ?>
 
-      <h2>PHP Form Validation Example</h2>
-      <p><span class="error valign_middle">* required field</span></p>
-      <?php require 'components/form_layout.php'; ?>  
+        <h2>PHP Form Validation Example</h2>
+        <p><span class="error valign_middle">* required field</span></p>
+        <?php require 'components/form_layout.php'; ?>  
 
-      <?php
-      echo "<h2>Your Input:</h2>" .
-            $first .
-            "<br>" .
-            $last .
-            "<br>" .
-            $email .
-            "<br>" .
-            $gender; 
-      ?>
-    </div>
-    
-    <section class="display-top">
-      <?php require 'components/right_bar.php'; ?>
-      <div class="right_bar w3-round-large margin5">	 
-        <div class="w3-container min_height"><b>Your uploaded students:</b></div>       
-
+        <?php display_input($file_name, $first, $last, $email, $gender, $degree, $personal, $start_year, $branch, $faculty, $institute); ?>
       </div>
-    </section>
-  </main>
+      
+      <section class="display_top">
+        <?php require 'components/right_bar.php'; ?>
+        <div class="right_bar w3-round-large margin5">	 
+          <div class="w3-container min_height"><b>Your created students:</b></div>  
+          <?php
+            if (isset($_SESSION["file_name"])) {              
+              foreach($_SESSION["file_name"] as $key=>$file_name) {
+                  echo '<p class="w3-container w3-leftbar w3-border-black">' . $_SESSION["file_name"][$key] . '</p>';
+              }              
+            }                  
+          ?>         
+        </div>        
+      </section>
+    </main>
 
-  <?php require 'components/footer.php'; ?>
+    <?php require 'components/footer.php'; ?>
 </body>
 </html>
