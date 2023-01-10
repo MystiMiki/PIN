@@ -47,6 +47,10 @@ h1 {
     padding-top: 10px;
 }
 
+svg{
+    height: 300px;
+    width: 100%;
+}
 
 .right_bar {
     min-width: 150px;
@@ -67,12 +71,16 @@ h1 {
     margin: auto;
 }
 
-.min_height{
-    min-height: 23px;
-}
-
 .width450{
     width: 450px;
+}
+
+.height400{
+    height: 400px;
+}
+
+.min_height{
+    min-height: 23px;
 }
 
 .min_width{
